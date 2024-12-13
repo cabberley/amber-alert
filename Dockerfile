@@ -20,7 +20,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV TZ=UTC \
     AMBER_SITE_ID= \
     AMBER_API_KEY= \
-    WEBHOOK_URL= \
+    HOME_ASSISTANT_URI= \
+    HOME_ASSISTANT_BEARER= \
+    AMBER_FEED_IN_PRICE_SENSOR= \
+    AMBER_GENERAL_PRICE_SENSOR= \
+    AMBER_PRICE_DATE_SENSOR= \
     ALERT_HIGH=25 \
     ALERT_LOW=10 \
     DATA_RES=30
@@ -29,4 +33,4 @@ VOLUME ["/opt/amber/data"]
 
 ENTRYPOINT ["supercronic", "./crontab/amber-cron"]
 
-LABEL org.opencontainers.image.authors="MattKobayashi <matthew@kobayashi.au>"
+LABEL org.opencontainers.image.authors="cabberley <chris@abberley.com.au>"
