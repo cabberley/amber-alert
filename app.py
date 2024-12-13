@@ -17,16 +17,17 @@ with open("data/priceData.json", "r") as file:
 now = datetime.now()
 
 # Load environment variables
-try:
-    with open("/run/secrets/AMBER_API_KEY", "r") as apiKey_secret:
-        apiKey = apiKey_secret.read().strip()
-except FileNotFoundError:
-    raise Exception("API key secret not defined.")
-except Exception as e:
-    raise Exception(f"Error reading API key secret: {e}")
+#try:
+#    with open("/run/secrets/AMBER_API_KEY", "r") as apiKey_secret:
+#        apiKey = apiKey_secret.read().strip()
+#except FileNotFoundError:
+#    raise Exception("API key secret not defined.")
+#except Exception as e:
+#    raise Exception(f"Error reading API key secret: {e}")
 
 try:
     siteId = os.environ["AMBER_SITE_ID"]
+    apiKey = os.environ["AMBER_API_KEY"]
     webhookUrl = os.environ["WEBHOOK_URL"]
     alertHigh = float(os.environ["ALERT_HIGH"])
     alertLow = float(os.environ["ALERT_LOW"])
