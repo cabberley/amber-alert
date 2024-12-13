@@ -17,7 +17,7 @@ COPY requirements.txt requirements.txt
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENV TZ=UTC \
+ENV TZ=australia\Brisbane \
     AMBER_SITE_ID= \
     AMBER_API_KEY= \
     HOME_ASSISTANT_URI= \
